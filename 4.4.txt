@@ -1,0 +1,12 @@
+//输入整数  并按八进制输出  
+
+
+#include<stdio.h>
+
+int main(void) 
+{
+	int a;
+	scanf_s("%d", &a);
+	printf("%05o", a);
+	return 0;
+}

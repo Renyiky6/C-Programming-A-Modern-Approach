@@ -1,0 +1,29 @@
+//输入4个整数  输出最大 最小值
+
+
+#include<stdio.h>
+
+int main(void) 
+{
+	int x, y;
+	printf("Please enter the grade:");
+	scanf_s("%d", &x);
+	
+	printf("The scale is: ");
+
+	if(x>100||x<0)
+		printf(" WRONG NUMBER !\n");
+	x = x / 10;
+	if (x == 9 || x == 10)
+		printf("A\n");
+	else if (x >= 8)
+		printf("B\n");
+	else if (x >= 7)
+		printf("C\n");
+	else if (x >= 6)
+		printf("D\n");
+	else
+		printf("F\n");
+
+	return 0;
+}

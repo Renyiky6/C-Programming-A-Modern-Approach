@@ -1,0 +1,11 @@
+//输入两位数  逆序打印
+
+#include<stdio.h>
+
+int main(void) 
+{
+	int a, b;
+	scanf_s("%1d%1d", &a, &b);
+	printf("%d%d", b, a);
+	return 0;
+}

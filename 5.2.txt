@@ -1,0 +1,20 @@
+//24小时制 转 12小时制
+
+
+#include<stdio.h>
+
+int main(void) 
+{
+	int x, y;
+	printf("please enter a 24-hour time (xx:xx) : ");
+	scanf_s("%d:%d", &x,&y);
+	printf("convert into 12-hour time :");
+	if (x > 12) {
+		x = x - 12;
+		printf(" %d:%dpm\n", x, y);
+	}
+	else
+		printf(" %d:%dam\n", x, y);
+
+	return 0;
+}
