@@ -5,8 +5,8 @@
 
 int main(void) 
 {
-	int a;
-	scanf_s("%d", &a);
-	printf("%05o", a);
+	int numA;
+	scanf_s("%d", &numA);
+	printf("%05o", numA);
 	return 0;
 }

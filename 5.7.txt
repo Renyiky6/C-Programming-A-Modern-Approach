@@ -1,28 +1,28 @@
-//输入分数 判断等级
+//输入四个数  输出其中最高 最低值
 
 
 #include<stdio.h>
 
 int main(void) 
 {
-	int a, b, c, d;
+	int stuA, stuB, stuC, stuD;
 	int max,min;
 
 	printf("Enter four integers:");
-	scanf_s("%d%d%d%d", &a, &b, &c, &d);
-	max = a;
-	if (max < b)
-		max = b;
-	if (max < c)
-		max = c;
-	max = max < d ? d : max;
+	scanf_s("%d%d%d%d", &stuA, &stuB, &stuC, &stuD);
+	max = stuA;
+	if (max < stuB)
+		max = stuB;
+	if (max < stuC)
+		max = stuC;
+	max = max < stuD ? stuD : max;
 
-	min = a;
-	if (min > b)
-		min = b;
-	if (min > c)
-		min = c;
-	min = min > d ? d : min;
+	min = stuA;
+	if (min > stuB)
+		min = stuB;
+	if (min > stuC)
+		min = stuC;
+	min = min > stuD ? stuD : min;
 
 	printf("Largest: %d\nSmallest: %d\n", max, min);
 

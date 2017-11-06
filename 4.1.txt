@@ -4,8 +4,8 @@
 
 int main(void) 
 {
-	int a, b;
-	scanf_s("%1d%1d", &a, &b);
-	printf("%d%d", b, a);
+	int numA, numB;
+	scanf_s("%1d%1d", &numA, &numB);
+	printf("%d%d", numB, numA);
 	return 0;
 }

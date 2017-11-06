@@ -5,16 +5,16 @@
 
 int main(void) 
 {
-	int x, y;
+	int hour, min;
 	printf("please enter a 24-hour time (xx:xx) : ");
-	scanf_s("%d:%d", &x,&y);
+	scanf_s("%d:%d", &hour,&min);
 	printf("convert into 12-hour time :");
 	if (x > 12) {
-		x = x - 12;
-		printf(" %d:%dpm\n", x, y);
+		hour = hour - 12;
+		printf(" %d:%dpm\n", hour, min);
 	}
 	else
-		printf(" %d:%dam\n", x, y);
+		printf(" %d:%dam\n", hour, min);
 
 	return 0;
 }

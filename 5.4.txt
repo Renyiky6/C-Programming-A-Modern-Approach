@@ -5,20 +5,20 @@
 
 int main(void) 
 {
-	float x;
+	float speed;
 	printf("please enter the speed : ");
-	scanf_s("%f", &x);
+	scanf_s("%f", &speed);
 	printf("The scale of the wind is :");
-	if (x < 1.0f) {
+	if (speed < 1.0f) {
 		printf("Calm");
 	}
-	else if (x >= 1.0f && x < 4.0f)
+	else if (speed >= 1.0f && speed < 4.0f)
 		printf("Light air\n");
-	else if (x >= 4.0f && x < 28.0f)
+	else if (speed >= 4.0f && speed < 28.0f)
 		printf("Breeze\n");
-	else if (x >= 28.0f && x < 48.0f)
+	else if (speed >= 28.0f && speed < 48.0f)
 		printf("Gale\n");
-	else if (x >= 48.0f && x < 63.0f)
+	else if (speed >= 48.0f && speed < 63.0f)
 		printf("Storm\n");
 	else
 		printf("Hurricane\n");
