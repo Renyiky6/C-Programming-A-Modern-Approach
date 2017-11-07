@@ -1,0 +1,18 @@
+//输入一个正整数n  输出1~n的偶数平方值
+#include<stdio.h>
+
+int main(void) {
+	int num,temp;
+	int i = 2;
+	temp = i*i;
+
+	printf("Enter a number: ");
+	scanf_s("%d", &num);
+
+	while(temp <= num){
+		printf("%d\n", temp);
+		temp = i*i;
+		i = i + 2;
+	}
+	return 0;
+}

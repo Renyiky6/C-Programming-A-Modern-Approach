@@ -1,0 +1,38 @@
+//Euclid算法求最大公约数
+
+#include<stdio.h>
+
+int main(void) {
+	int numA, numB;
+
+	printf("Enter two integers: ");
+	scanf_s("%d%d", &numA, &numB);
+
+	if (numA == 0 && numB == 0) {
+		printf("Wrong number!\n");
+	}
+
+	else 
+	{
+		for (int temp; numB >= 0;) {
+			if (numA == 0) {
+				printf("Greatest common divisor is: %d\n", numB);
+				break;
+			}
+
+			else if (numB == 0) {
+				printf("Greatest common divisor is: %d\n", numA);
+				break;
+			}
+			temp = numA;
+			numA = numB;
+			numB = temp % numB;
+		}
+	
+		
+	}
+
+
+	return 0;
+
+}

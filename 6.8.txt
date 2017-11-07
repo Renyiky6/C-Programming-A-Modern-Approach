@@ -1,0 +1,25 @@
+//显示单月日历
+#include<stdio.h>
+
+int main(void) {
+	int month, start;
+
+	printf("Enter number of days in month: ");
+	scanf_s("%d", &month);
+	printf("Enter starting day of the week(1=Sun. , 7=Sat.): ");
+	scanf_s("%d", &start);
+
+	for (int n = 0; n < start - 1; n++) {
+		printf("   ");
+	}
+
+	for (int i = 1; i < month+1; i++) {
+		
+		printf("%2d ", i);
+		if ((start + i-1) % 7 == 0)
+			printf("\n");
+		
+	}
+	printf("\n");
+	return 0;
+}
