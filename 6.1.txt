@@ -1,0 +1,22 @@
+//输入数字  当输入非正数时  输出已输入的最大非负数
+
+#include<stdio.h>
+
+int main(void) {
+	float num,temp;
+
+	printf("Enter a number: ");
+	scanf_s("%f", &num);
+	temp = num;
+
+	for (; num > 0.0f;) {
+		if (num > temp) {
+			temp = num;
+		}
+		printf("Enter a number: ");
+		scanf_s("%f", &num);
+	}
+
+	printf("The largerst number enterd was: %f\n", temp);
+	return 0;
+}

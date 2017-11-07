@@ -1,0 +1,41 @@
+//∑÷ ΩªØºÚ
+
+#include<stdio.h>
+
+int main(void) {
+	int numA, numB;
+	int A, B;
+
+	printf("Enter a fraction(x/x): ");
+	scanf_s("%d/%d", &numA, &numB);
+	A = numA;
+	B = numB;
+
+	if (numB == 0) {
+		printf("Wrong number!\n");
+	}
+
+	else 
+	{
+		for (int temp; numB >= 0;) {
+			if (numA == 0) {
+				printf("In lowest terms: %d/%d\n", A/numB,B/numB);
+				break;
+			}
+
+			else if (numB == 0) {
+				printf("In lowest terms: %d/%d\n", A/numA,B/numA);
+				break;
+			}
+			temp = numA;
+			numA = numB;
+			numB = temp % numB;
+		}
+	
+		
+	}
+
+
+	return 0;
+
+}
