@@ -1,0 +1,36 @@
+//Sum the numbers which are instead of letters by using function 'toupper'
+
+#include<stdio.h>
+#include<ctype.h>
+
+int main(void) {
+	char i;
+	int sum=0;
+	printf("Enter the letters: ");
+	i=getchar();
+	while (i != '\n') {
+		switch (toupper(i))
+		{
+		case'A':case'E':case'I':case'L':case'N':case'O':case'R':case'S':case'T':case'U':
+			sum = sum + 1; break;
+		case'D':case'G':
+			sum = sum + 2; break;
+		case'B':case'C':case'M':case'P':
+			sum = sum + 3; break;
+		case'F':case'H':case'V':case'W':case'Y':
+			sum = sum + 4; break;
+		case'K':
+			sum = sum + 5; break;
+		case'J':case'X':
+			sum = sum + 8; break;
+		case'Q':case'Z':
+			sum = sum + 10; break;
+		default:
+			printf("Wrong!");
+			break;
+		}
+		i=getchar();
+	}
+	printf("Scrabble value: %d\n", sum);
+	return 0;
+}

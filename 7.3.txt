@@ -1,0 +1,19 @@
+//Sums a series of numbers (using double varieble)
+//Pause while entering 0
+
+#include<stdio.h>
+
+int main(void) {
+	double num;
+	double sum = 0.0;
+	
+	printf("Enter integers:");
+	scanf_s("%lf",&num);   // scanf needs 'lf'
+	while (num > 0.0) {
+		
+		sum = num + sum;
+		scanf_s("%lf", &num);
+	}
+	printf("The sum is: %f\n", sum);  // but printf doesn't
+	return 0;
+}

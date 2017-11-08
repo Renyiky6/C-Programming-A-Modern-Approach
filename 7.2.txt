@@ -1,0 +1,27 @@
+//Enter a integer
+//output the approximation of e
+
+#include<stdio.h>
+
+int main(void) {
+	int i, n;
+	char enter;
+
+	printf("This program prints a table of squares.\n");
+	printf("Enter number of entries in table:");
+	scanf_s("%d", &n);
+	enter = getchar();   //注意这一行  将此处scanf的换行符读入（消除）  尤为重要
+
+	for (i = 1; i <= n; i++) {
+		printf("%10d%10d\n", i, i*i);
+		if (i % 24 == 0) {
+			printf("Press Enter to continue.");
+			enter = getchar();
+			if(enter=='\n')
+				;
+			else
+				printf("Wrong!");
+		}
+	}
+	return 0;
+}

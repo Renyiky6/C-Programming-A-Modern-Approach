@@ -1,0 +1,21 @@
+//12-hour time to 24-hour time
+
+#include<stdio.h>
+#include<ctype.h>
+
+int main(void) {
+	int hour, min;
+	char AP;
+
+	printf("Enter a 12-hour time(XX:XX AM): ");
+	scanf_s("%d:%d", &hour, &min);
+	AP = getchar(); // 读取分钟与时间制度之间的一个空格
+	while (AP != 'A' && AP != 'P') {   //注意应为逻辑与   不是逻辑或
+		AP=getchar();
+	}
+	if (AP == 'A')  //注意应为 等值判定符==   不是赋值符号
+		printf("Equivalent 24-hour time is: %d:%d\n", hour, min);
+	else
+		printf("Equivalent 24-hour time is: %d:%d\n", hour + 12, min);
+	return 0;
+}

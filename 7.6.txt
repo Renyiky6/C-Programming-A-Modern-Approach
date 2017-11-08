@@ -1,0 +1,8 @@
+//Show the size of the types.
+
+#include<stdio.h>
+
+int main(void) {
+	printf("%d\t%d\t%d\t%d\t%d\t%d\n", sizeof(int), sizeof(short), sizeof(long), sizeof(float), sizeof(double), sizeof(long double));
+	return 0;
+}
