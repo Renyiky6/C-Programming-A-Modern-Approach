@@ -1,0 +1,22 @@
+
+
+#include<stdio.h>
+#include<ctype.h>
+
+int main(void) {
+	char Fletter,letter;
+
+	printf("Enter a first name and last name: ");
+	Fletter = getchar();
+	letter = Fletter;
+	while (letter != ' ') {
+		letter = getchar();
+	}
+	letter= getchar();
+	while (letter != '\n') {
+		printf("%c", letter);
+		letter = getchar();
+	}
+	printf(", %c.\n", toupper(Fletter));
+	return 0;
+}

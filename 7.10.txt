@@ -1,0 +1,23 @@
+//count the number of a e i o u
+
+#include<stdio.h>
+
+int main(void) {
+	char i;
+	int n=0;
+
+	printf("Enter a sentence: ");
+	i = getchar();
+	while (i !='\n') {
+		switch (i)
+		{
+		case'a':case'e':case'i':case'o':case'u':
+			n++; break;
+		default:
+			break;
+		}
+		i = getchar();
+	}
+	printf("Your sentence contains %d vowels.\n", n);
+	return 0;
+}

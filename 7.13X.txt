@@ -1,0 +1,33 @@
+#include<stdio.h>
+
+int main(void) {
+	int sum=0,i,j=0;
+	char temp;
+	float result;
+
+	printf("Enter a sentence: ");
+	temp = getchar();
+	while (temp != '\n') {
+		
+		while (temp != ' ') {
+			for (i = 0; temp != ' '; ) {
+				if (temp == '\n')
+					break;
+				i++;
+				temp = getchar();
+			}
+			sum = sum + i;
+			if (temp == '\n')
+				break;
+		}
+		if (temp == '\n') {
+			j++;
+			break;
+		}
+		temp = getchar();
+		j++;
+	}
+	result = (float)sum / j;
+	printf("Average word length: %.1f\n", result);
+	return 0;
+}

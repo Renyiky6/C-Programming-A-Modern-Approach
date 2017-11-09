@@ -1,0 +1,31 @@
+
+#include<stdio.h>
+
+int main(void) {
+	double numA, numB,result;
+	char oper;
+	printf("Enter an expression: ");
+	scanf_s("%lf", &numA);
+	oper = getchar();
+	result = numA;
+
+	while (oper!='\n')
+	{
+		
+			scanf_s("%lf", &numB);
+			
+			switch (oper)
+			{
+			case'+':result = result + numB; break;
+			case'-':result = result - numB; break;
+			case'*':result = result * numB; break;
+			case'/':result = result / numB; break;
+			default:printf("WRONG!");
+				break;
+			}
+			oper = getchar();
+	}
+	printf("%1f\n", result);
+	return 0;
+	
+}
