@@ -1,0 +1,40 @@
+#include<stdio.h>
+#include<stdbool.h>
+
+int main(void)
+{
+	bool num_seen[10] = { false };
+	bool temp[10];
+	int num,judg;
+	long n;
+
+	printf("Enter a number: ");
+	scanf_s("%ld",&n);
+
+	while(n>0)
+	{
+		num = n % 10;
+		if (num_seen[num] == true)
+		{
+			temp[num] = true;
+			judg = 1;
+		}
+			
+		num_seen[num] = true;
+		n=n / 10;
+	}
+
+	if (judg == 1)
+	{
+		printf("Repeated numbers are: ");
+		for (int i = 0; i < 10; i++)
+		{
+			if (temp[i] == true)
+				printf("%d  ", i);
+		}
+	}
+
+	else
+		printf("No repeated numbers.");
+	return 0;
+}
