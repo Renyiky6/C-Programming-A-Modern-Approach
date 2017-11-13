@@ -1,0 +1,46 @@
+
+#include<stdio.h>
+
+#define N 5
+
+int main(void)
+{
+	int num[N][N];
+	int row = 0, col = 0;
+	int Rtotal=0, Ctotal=0;
+
+	for (; row < 5; row++)
+	{
+		printf("Enter row %d:", row + 1);
+		for (col=0; col < 5; col++)
+		{
+			scanf_s("%d", &num[row][col]);
+		}
+	}
+
+	printf("Row totals: ");
+	
+	for (row = 0; row < 5; row++)
+	{
+		Rtotal = 0;
+		for (col = 0; col < 5; col++)
+		{
+
+			Rtotal = Rtotal+ num[row][col];
+		}
+		printf("%d ", Rtotal);
+	}
+
+	printf("\nColumn totals: ");
+
+	for (col = 0; col < 5; col++)
+	{
+		Ctotal = 0;
+		for (row = 0; row < 5; row++)
+		{
+			Ctotal = Ctotal + num[row][col];
+		}
+		printf("%d ", Ctotal);
+	}
+	return 0;
+}
