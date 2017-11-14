@@ -1,0 +1,96 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include<time.h>
+#include<stdbool.h>
+
+#define N 10
+
+void initializer(char ar[][N]);
+void random_step(char ar[][N]);
+void prints(char ar[][N]);
+
+int main(void)
+{
+	char ar[N][N];
+
+	initializer(ar);
+	random_step(ar);
+	prints(ar);
+
+	return 0;
+}
+
+void initializer(char ar[][N])
+{
+	for (int i = 0; i < N; i++)
+	{
+		for (int n = 0; n < N; n++)
+		{
+			ar[i][n] = '.';
+		}
+	}
+}
+
+// 0 up
+// 1 down
+// 2 left
+// 3 right
+
+void random_step(char ar[][N])
+{
+	char letter='A';
+	int orient;
+	int row = 0, col = 0;
+	int temprow = 0, tempcol = 0;
+	ar[row][col] = letter;
+	int temp[4] = { false };
+
+	srand((unsigned)time(NULL));
+	while (1)
+	{
+		orient=rand() % 4;
+		if (temp[orient] == false) 
+		{
+			switch (orient)
+			{
+			case 0:temprow = row - 1; temp[0] = true; break;
+			case 1:temprow = row + 1; temp[1] = true; break;
+			case 2:tempcol = col - 1; temp[2] = true; break;
+			case 3:tempcol = col + 1; temp[3] = true; break;
+			default:
+				break;
+			}
+			if (temprow >=0 && temprow <= 9 && tempcol >= 0 && tempcol <= 9 && ar[temprow][tempcol] == '.'&&letter - 'A' < 25)
+			{
+				row = temprow;
+				col = tempcol;
+				ar[row][col] = ++letter;
+				for (int i = 0; i < 4; i++)
+				{
+					temp[i] = false;
+				}
+			}
+			else if (temp[0] == true && temp[1] == true && temp[2] == true && temp[3] == true)
+			{
+				break;
+			}
+			else
+			{
+				temprow = row;
+				tempcol = col;
+			}
+		}
+	}
+}
+
+void prints(char ar[][N])
+{
+	for (int i = 0; i < N; i++)
+	{
+		for (int n = 0; n < N; n++)
+		{
+			printf("%c ", ar[i][n]);
+		}
+		printf("\n");
+	}
+}
