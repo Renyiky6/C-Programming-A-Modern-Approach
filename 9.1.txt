@@ -1,0 +1,51 @@
+#include<stdio.h>
+
+#define	N 50
+
+void selection_sort(int ar[],int i,int n);
+
+int main(void)
+{
+	char temp;
+	int num[N];
+	int i,n=0;
+
+	printf("Enter a series of numbers:(End with -1) ");
+	for (i = 0; num[i-1]!= -1; i++)
+	{
+		scanf_s("%d",&num[i]);
+	}
+	i = i - 2;
+	selection_sort(num, i,n);
+	for (int n = 0; n <= i; n++)
+	{
+		printf("%d ", num[n]);
+	}
+	printf("\n");
+	return 0;
+}
+
+void selection_sort(int ar[], int i,int n)
+{
+	int temp;
+
+	if (n < i)
+	{
+		if (ar[n] > ar[n + 1])
+		{
+			temp = ar[n];
+			ar[n] = ar[n + 1];
+			ar[n + 1] = temp;
+		}
+		n++;
+		selection_sort(ar, i, n);
+	}
+	else if (i != 0)
+	{
+		i--;
+		selection_sort(ar, i, 0);
+	}
+	else
+		return;
+}
+

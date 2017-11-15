@@ -1,0 +1,64 @@
+#include<stdio.h>
+
+#define N 50
+int input_letter(char a[]);
+void sort_letter(char a[],int temp);
+
+int main(void)
+{
+	char ar[N];
+	int temp;
+
+	printf("Enter a sentence: ");
+	temp=input_letter(ar);
+	sort_letter(ar,temp);
+
+	return 0;
+}
+
+int input_letter(char ar[])
+{
+	char let;
+	int i=0;
+	
+	let=getchar();
+	for (i; let != '.'&&let != '!'&&let != '?'; i++)
+	{
+		ar[i] = let;
+		let = getchar();
+	}
+	ar[i] = let;
+	return i;
+}
+
+void sort_letter(char ar[],int temp)
+{
+	int low,high;
+
+	high = temp - 1;
+	low = temp - 1;
+
+	for (;;)
+	{
+		if (ar[low]==' ')
+		{
+			for (int n = low+1; n <= high; n++)
+			{
+				printf("%c", ar[n]);
+			}
+			high = low-1;
+			printf(" ");
+		}
+		else if (low == 0)
+		{
+			for (low; low <= high ; low++)
+			{
+				printf("%c", ar[low]);
+			}
+			printf("%c", ar[temp]);
+			break;
+		}
+		low--;
+	}
+	printf("\n");
+}
