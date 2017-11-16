@@ -1,0 +1,37 @@
+#include<stdio.h>
+
+void reduce(int numerator, int denominator, int *reduced_numerator, int *reduced_denominator);
+
+int main(void)
+{
+	int numerator, denominator;
+	printf("Enter two integers(X/X): ");
+	scanf_s("%d/%d", &numerator, &denominator);
+
+	reduce(numerator, denominator, &numerator, &denominator);
+	if(denominator==1)
+	printf("%d\n", numerator);
+	else
+	{
+		printf("%d/%d\n", numerator, denominator);
+	}
+	return 0;
+}
+
+void reduce(int nume, int deno, int *reduced_nume, int *reduced_deno)
+{
+	int i=0,temp,frac;
+	if (nume > deno)
+	{
+		temp = nume;
+		nume = deno;
+		deno = temp;
+	}
+	for (i=1,frac; i <= nume; i++)
+	{
+		if (nume%i == 0 && deno%i == 0)
+			frac = i;
+	}
+	*reduced_nume /= frac;
+	*reduced_deno /= frac;
+}
