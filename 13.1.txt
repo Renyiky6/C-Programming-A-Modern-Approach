@@ -1,0 +1,60 @@
+#include<stdio.h>
+#include<string.h>
+#pragma warning(disable:4996)
+
+char* smallest_word(char *p, char *firstword);
+char* largest_word(char *p, char *firstword);
+
+int main(void)
+{
+	char word[20], firstword[20];
+	char *p, *large, *small;
+
+	printf("Enter a word: ");
+	scanf("%s", word);
+	p = word;
+	strcpy_s(firstword, sizeof(firstword), word);
+	for (;;)
+	{
+		if (strlen(p) == 4)
+			break;
+		small = smallest_word(p, firstword);
+		large = largest_word(p, firstword);
+		printf("Enter a word: ");
+		scanf("%s", p);
+	}
+
+	printf("The smallest word: %s\n", small);
+	printf("The largest word: %s\n", large);
+	return 0;
+}
+
+char* smallest_word(char *p, char *firstword)
+{
+	static char tempone[20];
+
+	strcpy_s(tempone, sizeof(tempone), firstword);
+	if (strcmp(p, tempone) < 0)
+	{
+		strcpy_s(tempone, sizeof(tempone), p);
+		return tempone;
+	}
+	else
+	{
+		return tempone;
+	}
+}
+
+char *largest_word(char *p, char *firstword)
+{
+	static char tempone[20];
+
+	strcpy_s(tempone, sizeof(tempone), firstword);
+	if (strcmp(p, tempone) > 0)
+	{
+		strcpy_s(tempone, sizeof(tempone), p);
+		return tempone;
+	}
+	else
+		return tempone;
+}
